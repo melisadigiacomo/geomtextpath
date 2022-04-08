@@ -1,0 +1,53 @@
+---
+title: "{geomtextpath}"
+author: "Melisa Di Giacomo"
+output:
+  html_document:
+    toc: yes
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tomato flavor
+
+```{r libraries, message=FALSE}
+# Libraries
+library(ggplot2)
+library(geomtextpath)
+```
+
+## Dataset
+
+```{r dataset}
+# Dataset
+tomato = read.csv('tomato.csv', header=1)
+```
+
+## Plots
+
+### Citric acid by botanical variety
+
+```{r plot citric acid, warning=FALSE, fig.dim = c(10, 7)}
+ggplot(tomato, aes(x = citric_acid, colour = botanical_variety, label = botanical_variety)) +
+  geom_textdensity(size = 6, fontface = 2, hjust = 0.2, vjust = 0.33) +
+  labs(title="Citric acid content by tomato botanical varieties",
+       caption="Source: Table S1, Tieman et al. 2017\n@melisadigiacomo") +
+  xlab("Citric Acid") + ylab("Density") +
+  scale_colour_manual(values = c("#fc9272", "#de2d26", "#a50f15")) +
+  theme_classic() + theme(legend.position = "none", axis.text = element_text(size = 15), text = element_text(size = 15))
+```
+
+### Fructose by botanical variety
+
+```{r plot fructose, warning=FALSE, fig.dim = c(10, 7)}
+ggplot(tomato, aes(x = fructose, colour = botanical_variety, label = botanical_variety)) +
+  geom_textdensity(size = 6, fontface = 2, hjust = 0.15, vjust = 0.2) +
+  labs(title="Fructose content by tomato botanical varieties",
+       caption="Source: Table S1, Tieman et al. 2017\n@melisadigiacomo") +
+  xlab("Fructose") + ylab("Density") +
+  scale_colour_manual(values = c("#fc9272", "#de2d26", "#a50f15")) +
+  theme_classic() + theme(legend.position = "none", axis.text = element_text(size = 15), text = element_text(size = 15))
+```
