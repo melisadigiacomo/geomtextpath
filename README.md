@@ -3,7 +3,7 @@
 The R package {geomtextpath}, a ggplot2 extension, offers direct and automatic solutions for labeling.  
 Easy and pretty text labels!  
 
-I used it to show density plots of two metabolites (fructose and citric acid) that potentially contribute to flavor in three tomato botanical varieties.
+I used it to show density plots of two metabolites (fructose and citric acid) that potentially contribute to flavor in three tomato botanical varieties.  
 Source: Table S1, Tieman et al. (2017)  
 
 ![geomtextpath](geomtextpath.png)  
